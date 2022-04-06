@@ -2,6 +2,7 @@
 #gu min cheol's calculater
 #2017110539
 
+echo "project management in github"
 num=($(<num1.txt) $(<num2.txt))
 
 if [ $# -eq 0 ]; then
