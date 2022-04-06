@@ -2,8 +2,7 @@
 #gu min cheol's calculater
 #2017110539
 
-num1=$(<num1.txt)
-num2=$(<num2.txt)
+num=($(<num1.txt) $(<num2.txt))
 
 if [ $# -eq 0 ]; then
 	echo "...none operator parameter...."
@@ -16,21 +15,21 @@ if [ $# -eq 0 ]; then
 fi
 
 echo ""
-echo "num1 : $num1"
-echo "num2 : $num2"
+echo "num1 : ${num[0]}"
+echo "num2 : ${num[1]}"
 
 case $1 in
 	1) echo "op : add"
-	   let result=$num1+$num2;;
+	   let result=${num[0]}+${num[1]};;
 	   
 	2) echo "op : sub"
-	   let result=$num1-$num2;;
+	   let result=${num[0]}-${num[1]};;
 	   
 	3) echo "op : div"
-	   let result=$num1/$num2;;
+	   let result=${num[0]}/${num[1]};;
 	   
 	4) echo "op : mul"
-	   let result=$num1*$num2;;
+	   let result=${num[0]}*${num[1]};;
 esac
 
 echo "result : $result"
