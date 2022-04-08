@@ -31,4 +31,4 @@ for i in range(0,len(list),1):
 sortedDict=sorted(dict.items(),key=operator.itemgetter(1), reverse=True)
 
 for k in range(0, int(sys.argv[2]), 1):
-    print("{} {}".format( sortedDict[k][0], str(sortedDict[k][1]) ) )
+    print("{:<15s} {:>10s}".format( sortedDict[k][0], str(sortedDict[k][1]) ) )
