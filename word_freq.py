@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# print top n word-frequency
+# gu min cheol 2017110539
 from audioop import reverse
 import sys
 import operator
