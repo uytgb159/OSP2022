@@ -1,6 +1,7 @@
 #!/usr/bin/python
 from audioop import reverse
 import sys
+import operator
 
 print(sys.argv[0], sys.argv[1], sys.argv[2]) # ex) python word_freq.py para1 para2
 
@@ -27,7 +28,4 @@ for i in range(0,len(list),1):
     else:
         dict[list[i]]+=1
     
-
-keys=dict.keys()
-for k in keys:
-    print(k, ":",dict[k])
+sortedDict=sorted(dict.items(),key=operator.itemgetter(1), reverse=True)
