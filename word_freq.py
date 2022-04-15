@@ -4,6 +4,7 @@
 from audioop import reverse
 import sys
 import operator
+import re
 
 print(sys.argv[0], sys.argv[1], sys.argv[2]) # ex) python word_freq.py para1 para2
 
@@ -23,8 +24,7 @@ list=sentence.split()
 dict={}
 
 for i in range(0,len(list),1):
-    
-    list[i]=list[i].lower().strip('~!@#$%^&*()_+`=-[]\{}|;<>?,./')
+    list[i] = re.sub(r"[^a-zA-Z0-9]","",list[i])
     if dict.get(list[i])==None:
         dict[list[i]]=1
     else:
